@@ -20,7 +20,7 @@ if __name__ == "__main__":
     home = str(Path.home())
     tts_bin: str = os.path.join(home, "git", "Cherokee-TTS", "tts-wrapper", "tts.sh")
     tts_checkpoint: str = "2a-2021-05-01-epoch_300-loss_0.0740"
-    tts_voice: str = "345-en-m"
+    tts_voice: str = "360-en-m"
 
     ced_file: str = os.path.join("..", "ced-mco-alt.txt")
     ced_entries: Dict[str, Tuple[str, str, str]]
