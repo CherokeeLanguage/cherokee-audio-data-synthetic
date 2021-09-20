@@ -5028,7 +5028,7 @@
 73763-1-entrytone|ᎤᏙᏓᏆᏍᎬᎢ|Ù:dǒ:dágwà:sgv̋:ɂi.|Sunday
 73763-2-entrytone|ᎤᎾᏙᏓᏆᏍᎬᎢ|Ù:nadǒ:dágwà:sgv̋:ɂi.|Sunday
 73764-1-entrytone|ᎤᏙᏓᏈᏕᎾ|U:dǒ:dágwi:de̋:na.|Saturday
-73764-2-entrytone|ᎤᎾᏙᏓᏈᏕᎾ|Ù(nā)dǒ:dágwi:de̋:na.|Saturday
+73764-2-entrytone|ᎤᎾᏙᏓᏈᏕᎾ|Ù:nadǒ:dágwi:de̋:na.|Saturday
 73765-1-entrytone|ᎤᏙᏓᏈᏗᏒᎢ|Ù:dǒ:dágwi:dí:sv̋:ɂi.|During the day
 73766-1-entrytone|ᎤᏙᏓᏉᏅᎢ|U:dǒ:dágwohnv̋:ɂi.|Monday
 73766-2-entrytone|ᎤᎾᏙᏓᏉᏅᎢ|U:nadǒ:dágwohnv̋:ɂi.|Monday
