@@ -1,4 +1,4 @@
-#!/usr/bin/env -S conda run -n cherokee-audio-data python
+#!/usr/bin/env -S conda run -n Cherokee-TTS python
 import random
 import shutil
 import sys
@@ -30,8 +30,8 @@ if __name__ == "__main__":
 
     ced_file: str = os.path.join("..", "ced-mco-alt.txt")
 
-    shutil.rmtree(tts_voice, ignore_errors=True)
-    os.mkdir(tts_voice)
+    #shutil.rmtree(tts_voice, ignore_errors=True)
+    #os.mkdir(tts_voice)
 
     ced_entries: List[str] = []
     with open(ced_file, "r") as f:
@@ -60,13 +60,20 @@ if __name__ == "__main__":
         pronounce: str = fields[2]
         definition: str = fields[3]
         pronounce = ud.normalize("NFD", pronounce)
+
+        mp3_file: str = os.path.join(tts_voice, f"{tts_voice}_{id_num}.mp3")
+        txt_file: str = os.path.join(tts_voice, f"{tts_voice}_{id_num}.txt")
+
+        if os.path.exists(mp3_file) and os.path.exists(txt_file):
+            continue
+
         cmd: List[str] = [tts_bin, "--gpu", "--checkpoint", tts_checkpoint, "--lang", "chr", "--voice", tts_voice,
                           "--wav", "tmp.wav", "--text", pronounce]
         subprocess.run(cmd, check=True)
         audio: AudioSegment = AudioSegment.from_file("tmp.wav")
         audio = effects.normalize(audio)
-        audio.export(os.path.join(tts_voice, f"{tts_voice}_{id_num}.mp3"), format="mp3", parameters=["-qscale:a", "3"])
-        with open(os.path.join(tts_voice, f"{tts_voice}_{id_num}.txt"), "w") as f:
+        audio.export(mp3_file, format="mp3", parameters=["-qscale:a", "3"])
+        with open(txt_file, "w") as f:
             f.write(f"[{tts_voice}]")
             f.write("\n")
             f.write(f"{syllabary} ({pronounce})")

@@ -85,8 +85,13 @@ if __name__ == "__main__":
                 for (value, syl_value) in zip(values, syl_values):
                     value = value.strip()
                     syl_value = syl_value.strip()
+
                     if not value or not syl_value:
                         continue
+                    if "(" in value or ")" in value:
+                        print(f"Bad pronunciation entry: {entry_id}: {value}, {syl_value}, {definition}")
+                        value = value.replace("(", "").replace(")", "")
+                        syl_value = syl_value.replace("(", "").replace(")", "")
 
                     value = ud.normalize("NFC", ascii_ced2mco(value)).lower().capitalize()
                     syl_value = ud.normalize("NFC", syl_value.upper())
