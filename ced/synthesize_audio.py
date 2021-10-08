@@ -59,7 +59,7 @@ if __name__ == "__main__":
         syllabary: str = fields[1]
         pronounce: str = fields[2]
         definition: str = fields[3]
-        pronounce = ud.normalize("NFD", pronounce)
+        pronounce = ud.normalize("NFC", pronounce)
 
         mp3_file: str = os.path.join(tts_voice, f"{tts_voice}_{id_num}.mp3")
         txt_file: str = os.path.join(tts_voice, f"{tts_voice}_{id_num}.txt")
